@@ -35,7 +35,7 @@ class SendMail(Resource):
     """.format(args['username'], args['subject'], args['sender'], args['body'])
 
     mail.send(msg)
-    return {"message": "mensaje enviado"}, 201
+    return {"message": "El mensaje se a enviado correctamente."}, 201
 
 api.add_resource(SendMail, "/sendmail")
 
