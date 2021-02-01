@@ -17,7 +17,7 @@ mail = Mail(app)
   
 class Index(Resource):
   def get(self):
-    return "<h1>Welcome to our server !!</h1>"
+    return "Welcome to our server !!"
 
 class SendMail(Resource):
   def post(self):
