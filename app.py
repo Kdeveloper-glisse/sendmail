@@ -1,11 +1,11 @@
-from flask_restful import reqparse, Api, Resource 
+from flask_restful import reqparse, Api, Resource
 from flask import Flask, request
 from flask_mail import Mail, Message
 from flask_cors import CORS
 import os
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"*": {"origins": "*"}})
 
 api = Api(app)
 
