@@ -15,7 +15,7 @@ app.config['MAIL_USERNAME'] = 'kdev-consultas@hotmail.com'
 app.config['MAIL_PASSWORD'] = 'kdev.consultas'
 mail = Mail(app)
   
-class Index():
+class Index(Resource):
   def get(self):
     return "<h1>Welcome to our server !!</h1>"
 
