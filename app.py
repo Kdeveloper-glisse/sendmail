@@ -3,6 +3,7 @@ from flask import Flask, request
 from flask_mail import Mail, Message
 from flask_cors import CORS
 
+
 app = Flask(__name__)
 CORS(app, resources={r"*": {"origins": "*"}})
 
@@ -47,4 +48,4 @@ api.add_resource(Index, "/")
 api.add_resource(SendMail, "/sendmail")
 
 if __name__ == '__main__': 
-   app.run(threaded=True, port=5000)
+   app.run(threaded=True, port=5000, )
