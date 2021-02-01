@@ -15,6 +15,10 @@ app.config['MAIL_USERNAME'] = 'kdev-consultas@hotmail.com'
 app.config['MAIL_PASSWORD'] = 'kdev.consultas'
 mail = Mail(app)
   
+class Index():
+  def get(self):
+    return "<h1>Welcome to our server !!</h1>"
+
 class SendMail(Resource):
   def post(self):
     parser = reqparse.RequestParser()
@@ -39,8 +43,8 @@ class SendMail(Resource):
     mail.send(msg)
     return {"message": "El mensaje se ha enviado correctamente."}, 201
 
+api.add_resource(Index, "/")
 api.add_resource(SendMail, "/sendmail")
-
 
 if __name__ == '__main__': 
    app.run(threaded=True, port=5000)
