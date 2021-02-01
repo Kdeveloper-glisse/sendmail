@@ -1,8 +1,10 @@
 from flask_restful import reqparse, Api, Resource 
 from flask import Flask, request
 from flask_mail import Mail, Message
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 api = Api(app)
 
@@ -32,10 +34,10 @@ class SendMail(Resource):
     Mensaje: {}
     Saludos,
     Webmaster
-    """.format(args['username'], args['subject'], args['sender'], args['body'])
+    """.format(args['username'], args['sender'], args['subject'], args['body'])
 
     mail.send(msg)
-    return {"message": "El mensaje se a enviado correctamente."}, 201
+    return {"message": "El mensaje se ha enviado correctamente."}, 201
 
 api.add_resource(SendMail, "/sendmail")
 
